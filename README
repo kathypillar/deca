@@ -64,6 +64,7 @@ How to compile and install deca:
 
     Download the latest deca source, extract it, and then:
         cd deca-x.y
+	./autogen.sh
         ./configure
         make
         make install
