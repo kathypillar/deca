@@ -10,11 +10,11 @@
 - general style improvments:
 	- make UI colors user configurable: accidentally done, this already existed to a sense in the orignal
 - rearrange the help bar, adding more useful key binds and etc:
-- publish this:
+- publish this: DONE!
 - improve linter and spell check functionallity:
 	- maybe some sort of function memory
 	- possibly better word completion
-- fix all the ./config stuff to work:
+- fix all the ./config stuff to work: done!
 - expand decarc files:
 	- use set in decarc files: done
 	- maybe add some sort of scripting language?? idk
