@@ -1,0 +1,36 @@
+## Syntax highlighting for assembler.
+
+syntax z80 "\.(z80|inc)$"
+comment ";;"
+
+# Labels.
+color brightmagenta "^[[:blank:]]*[A-Z_a-z][0-9A-Z_a-z]*:[[:blank:]]*$"
+color normal ":[[:blank:]]*$"
+
+# Instructions
+color green "\b(ld|db|dw|org|push)\b"
+color red "\b(pop)\b"
+color brightyellow "\b(jp|call|bcall|djnz|ret)\b"
+color orange "\b(dec|add|sbc|sub|inc)\b"
+color cyan "\b(cp|and|or|xor)\b"
+
+color orange "(?<=call) +[A-Za-z_0-9]+"
+color orange "(?<=djnz) +[A-Za-z_0-9]+"
+color orange "(?<=[(])[^)]*"
+# regis
+color green "\b(a|f)\b"
+color brightgreen "\b(af)\b"
+color cyan "\b(h|l)\b"
+color brightcyan "\b(hl)\b"
+color yellow "\b(b|c)\b"
+color brightyellow "\b(bc)\b"
+color magenta "\b(d|e)\b"
+color brightmagenta "\b(de)\b"
+
+# Comments.
+color brightblue ";;.*"
+
+color brightcyan "^#include"
+color blue "(?<=^#include) +["].*["]"
+
+set scopes ":"

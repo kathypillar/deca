@@ -1,0 +1,35 @@
+## Syntax highlighting for the packet-filtering rules of Netfilter.
+
+## Original author:  Arturo Borrero González <arturo@debian.org>
+## License:  GPL version 3 or newer
+
+syntax nftables "\.(nft|nftables)$"
+header "^#!.*(nft|nftables)"
+comment "#"
+
+# Objects and operations
+color green "\b(chain|hook|policy|priority|ruleset|set|table|type|v?map)\b"
+color green "\b(define|include)\b"
+color red "\b(add|delete|flush|insert|remove|replace)\b"
+
+# Families
+color yellow "\b(arp|bridge|inet|ingress|ip6?|netdev)\b"
+
+# Terminal statements
+color red "\b(drop|reject)\b"
+color brightblue "\b(accept|continue|(d|s)nat|goto|jump|masquerade|return)\b"
+
+# Comments
+color cyan "(^|[[:blank:]])#.*"
+
+# Trailing whitespace
+color ,green "[[:space:]]+$"
+
+# Strings
+color yellow ""([^"\]|\\.)*"|'([^'\]|\\.)*'"
+
+# Syntactic symbols
+color green "[][{}():;|`$<>!=&\]"
+
+# Basic variable names
+color brightred "(\$|@)[[:alpha:]_-][[:alnum:]_.-]*"

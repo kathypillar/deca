@@ -1,0 +1,32 @@
+## Syntax highlighting for Java.
+
+syntax java "\.java$"
+magic "Java "
+comment "//"
+
+# Custom Types and Structs
+color brightgreen "\b[a-z_A-Z*]+(?=[[:blank:]]*(([<].*[>])|[[:blank:]]|(::))[[:blank:]]*[0-9A-Z_a-z*]+)"
+color brightgreen "(?<=(\bclass)|(\bnew)|(\bextends)|(\bimplements)|(\binstanceof)|(\binterface))[[:blank:]]+[0-9A-Z_a-z*]+"
+
+color green "\b(boolean|byte|char|double|float|int|long|new|short|this|transient|void|class)\b"
+# Functions
+color orange "[0-9A-Z_a-z]+ *(?=[(])"
+# Flow control.
+color brightyellow "\b(if|else|for|while|do|switch|case|default)\b"
+color brightyellow "\b(try|catch|operator|new|delete|continue|finally)\b"
+color magenta "\b(break|continue|return)\b"
+# Single-quoted stuff (characters, backslash escapes, hex and octal byte codes).
+color brightmagenta "'([^'\\]|\\(["'\abfnrtv]|x[[:xdigit:]]{1,2}|[0-3]?[0-7]{1,2}))'"
+# Strings.
+color brightyellow ""([^"]|\\")*"|((?<=\bimport)[[:blank:]][A-Za-z_.]+)+"
+
+color brightcyan "\b(import|public|static|package|throws|private|protected|strictfp|super|synchornized|volatile|extends)\b"
+# Comments.
+color brightblue "//[^"]*$|(^|[[:blank:]])//.*"
+color brightblue start="/\*" end="\*/"
+# Bools
+color yellow "\b(true|false|null)\b"
+# Trailing whitespace
+color ,green "[[:space:]]+$"
+# Constants.
+color brightred "\bfinal\b"

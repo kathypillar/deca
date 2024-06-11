@@ -1,0 +1,64 @@
+## Syntax highlighting for Lua.
+
+## Original author:  Matthew Wild
+## License:  GPL version 3 or newer
+
+syntax lua "\.lua$"
+magic "Lua script"
+comment "--"
+
+linter luacheck --no-color
+
+color brightwhite "\[\[.*\]\]"
+
+# Operators
+color brightyellow ":|\*|/|%|\+|-|\^|>|>=|<|<=|~=|=|\.\.|#|\b(not|and|or)\b"
+# Don't partially color ... as an operator
+color normal "\.\.\."
+
+# Statements
+color brightblue "\b(do|end|while|repeat|until|if|elseif|then|else|for|in|function|local|return|break)\b"
+
+# Keywords
+color brightyellow "\b(_G|_VERSION|assert|collectgarbage|dofile|error|getfenv|getmetatable|ipairs|load|loadfile|module|next|pairs|pcall|print|rawequal|rawget|rawlen|rawset|require|select|setfenv|setmetatable|tonumber|tostring|type|unpack|xpcall)[[:blank:]]*\("
+
+# Standard library
+color brightyellow "\bcoroutine\.(create|isyieldable|resume|running|status|wrap|yield)\b"
+color brightyellow "\bdebug\.(debug|(get|set)(fenv|hook|local|metatable|(up|user)value)|getinfo|getregistry|traceback|upvalue(id|join))\b"
+color brightyellow "\bio\.(close|flush|input|lines|output|p?open|read|tmpfile|type|write|std(in|out|err))\b"
+color brightyellow "\bmath\.(abs|acos|asin|atan2?|ceil|cosh?|deg|exp|floor|fmod|frexp|huge|ldexp|log10|log)\b"
+color brightyellow "\bmath\.((max|min)(integer)?|modf?|pi|pow|rad|random(seed)?|sinh?|sqrt|tan|tointeger|type|ult)\b"
+color brightyellow "\bos\.(clock|date|difftime|execute|exit|getenv|remove|rename|setlocale|time|tmpname)\b"
+color brightyellow "\bpackage\.(config|cpath|loaded|loadlib|path|preload|searchers|searchpath|seeall)\b"
+color brightyellow "\bstring\.(byte|char|dump|find|format|gmatch|gsub|len|lower|match|pack|packsize|rep|reverse|sub|unpack|upper)\b"
+color brightyellow "\btable\.(concat|insert|maxn|move|pack|remove|sort|unpack)\b"
+color brightyellow "\butf8\.(char|charpattern|codepoint|codes|len|offset)\b"
+
+#functions
+color orange "[0-9A-Z_a-z]+ *(?=[(])"
+
+# File handle methods
+color brightyellow ":(close|flush|lines|read|seek|setvbuf|write)\b"
+
+# External files
+color brightgreen "\b(dofile|require)\b"
+
+# Special words
+color brightmagenta "\b(false|nil|true)\b"
+
+# Decimal and hexadecimal numbers
+color red "\b[0-9]+(\.[0-9]*)?([Ee][+-]?[0-9]+)?\b"
+color red "\b0x[[:xdigit:]]+(\.[[:xdigit:]]*)?([Pp][+-]?[0-9]+)?\b"
+
+# Brackets
+color brightmagenta "\(|\)|\[|\]|\{|\}"
+
+# Shebang
+color brightcyan "^#!.*"
+
+# Strings
+color red ""([^"]|\\.)*"|'([^']|\\.)*'"
+
+# Simple comments and multiline comments
+color green "--.*"
+color green start="--\[\[" end="\]\]"

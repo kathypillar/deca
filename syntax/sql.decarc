@@ -1,0 +1,51 @@
+## Syntax highlighting for (Postgres) SQL scripts.
+
+syntax sql "\.sql$"
+comment "-- "
+
+# Types.
+icolor #0a4 "\b(integer|int[248]|(big|small)?(int|serial)|decimal|numeric|real|double precision)\b"
+icolor #0a4 "\b(bit( varying)?|boolean|bytea|enum|money|tsquery|tsvector|uuid|xml)\b"
+icolor #0a4 "\b(char|varchar|character( varying)?|text|cidr|inet|macaddr8?)\b"
+icolor #0a4 "\b(date|interval|time(stamp)?( with(out)? time zone)?)\b"
+icolor #0a4 "\b(box|circle|line|lseg|path|point|polygon)\b"
+icolor #0a4 "\b(date|int[48]|num|ts|tstz)range\b"
+
+# SQL keywords.
+icolor #48c "\b(ABORT|AGGREGATE|ALL|ALTER|ANALYZE|AND|ANY|AS|BEGIN|BETWEEN|CAST|CHECKPOINT)\b"
+icolor #48c "\b(CLOSE|CLUSTER|COLLATION|COMMENT|COMMIT|CONSTRAINTS?|CONVERSION|COPY|CREATE)\b"
+icolor #48c "\b(DATABASE|DEALLOCATE|DECLARE|DEFAULT|DELETE|DISCARD|DISTINCT|DO|DOMAIN|DROP)\b"
+icolor #48c "\b(END|EXCEPT|EXECUTE|EXISTS|EXPLAIN|EXTENSION|FALSE|FETCH|FOREIGN (DATA WRAPPER|SCHEMA|TABLE))\b"
+icolor #48c "\b(FROM|FUNCTION|GRANT|GROUP( BY)?|HAVING|IN|INDEX|INSERT|INTERSECT|INTO|IS)\b"
+icolor #48c "\b(NATURAL )?(INNER |OUTER |CROSS |(LEFT|RIGHT|FULL)( OUTER)? )?JOIN\b"
+icolor #48c "\b((PRIMARY|FOREIGN) KEY|LANGUAGE|LOAD|LIKE|LOCK|MOVE|NOT|NOTIFY|NULL)\b"
+icolor #48c "\b(ON|ONLY|OPERATOR( CLASS| FAMILY)?|OR|ORDER BY|PREPARED?|PRIVILEGES|PROCEDURE)\b"
+icolor #48c "\b(REFERENCES|RELEASE|REPLACE|RESET|RETURN(S|ING)|REVOKE|ROLE|ROLLBACK|RULE|SAVEPOINT|SCHEMA)\b"
+icolor #48c "\b(SELECT|SEQUENCE|SERVER|SESSION AUTHORIZATION|SET|SHOW|SIMILAR|START|SYSTEM)\b"
+icolor #48c "\b(TABLE(SPACE)?|TEXT SEARCH (CONFIGURATION|DICTIONARY|PARSER|TEMPLATE))\b"
+icolor #48c "\b(TO|TRANSACTION|(EVENT )?TRIGGER|TRUE|TRUNCATE|TYPE|UNION|UNIQUE|UPDATE|USER( MAPPING)?|USING)\b"
+icolor #48c "\b(VACUUM|VALUES|((REFRESH )?MATERIALIZED )?VIEW|WHERE|WITH)\b"
+
+# Flow control.
+icolor #cc0 "\b(CASE|WHEN|IF|THEN|ELSE|ELSE?IF|LOOP|CONTINUE|EXIT)\b"
+icolor #cc0 "\b(FOR|FOREACH|IN|WHILE|END (CASE|IF|LOOP))\b"
+icolor #a4a "\b(RAISE|EXCEPTION|NOTICE|RETURN)\b"
+
+# Quoted identifiers.
+color normal ""[[:alpha:]_][[:alnum:]_$]*""
+
+# Strings.
+color #4c0 "'([^']|\\')*'"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
+
+# Comments.
+color italic,#c44 "(--|//).*"
+color italic,#c44 start="/\*" end="\*/"
+
+# PostgreSQL default schemas.
+color grey "\b(pg_catalog|public)\b"
+
+# PostgreSQL PLs.
+color #c08 "\b(SQL|pl(java|perlu?|pgsql|py|pythonu?|r|ruby|scheme|sh|tcl))\b"

@@ -1,0 +1,48 @@
+## Syntax highlighting for Go.
+
+## Original author:  Robert Clausecker
+## License:  CC0 (public domain)
+
+syntax go "\.go$"
+comment "//"
+
+formatter gofmt -w
+
+# Types.
+color green "\b(bool|u?int(8|16|32|64)?|float(32|64)|complex(64|128)|byte|rune|uintptr|string|error)\b"
+color green "\b(chan|const|func|interface|map|struct|type|var)\b"
+color green "<-[[:blank:]]*chan\b|\bchan[[:blank:]]*<-"
+
+# Predefined functions.
+color blue "\b(append|cap|close|complex|copy|delete|imag|len|make|new|panic|print|println|real|recover)\b"
+
+# Control structures.
+color brightyellow "\b(case|default|defer|else|for|go|if|range|select|switch)\b"
+
+# Control flow.
+color magenta "\b(break|continue|fallthrough|goto|return)\b"
+
+# Declarations.
+color brightcyan "\b(package|import)\b"
+
+# Literals.
+color red "\b(true|false|nil|iota|_)\b"
+color red "\b([1-9][0-9]*|0[0-7]*|0[xX][[:xdigit:]]+)\b"
+color red "\b[0-9]+\.[0-9]*([eE][+-]?[0-9]+)?i?\b"
+color red "\b[0-9]+[eE][+-]?[0-9]+i?\b"
+color red "\B\.[0-9]+([eE][+-]?[0-9]+)?i?\b"
+color red "\b[0-9]+i\b"
+
+# Strings and characters; slightly fuzzy.
+color red ""([^"\]|\\.)*"|'([^'\]|\\.)+'"
+color red start=""([^"\]|\\.)*\\[[:blank:]]*$" end="^([^"\]|\\.)*""
+
+# Comments.
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
+
+# Special comments.
+color brightcyan "//[[:blank:]]*\+build[[:blank:]]+(([a-zA-Z_0-9]+[[:blank:]]*)+,[[:blank:]]*)*[a-zA-Z_0-9]+"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"

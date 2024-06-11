@@ -1,0 +1,21 @@
+- stop it from crashing when trying to open directories: donezo
+- options menu: 
+	- migrate configs and rcs to ~:
+- add insertion mode:	
+	- make replace mode work with undo!:
+- multibuffer tab display: DONE!!!!!!
+- improve the status bar: done! mostly anyway:
+	- add the current number of lines and words to it:
+	- make messages not overwrite the entire bar: DONE! EASILY!
+- general style improvments:
+	- make UI colors user configurable: accidentally done, this already existed to a sense in the orignal
+- rearrange the help bar, adding more useful key binds and etc:
+- publish this:
+- improve linter and spell check functionallity:
+	- maybe some sort of function memory
+	- possibly better word completion
+- fix all the ./config stuff to work:
+- expand decarc files:
+	- use set in decarc files: done
+	- maybe add some sort of scripting language?? idk
+- add auto-indenting for scopes: done

@@ -1,0 +1,8 @@
+## Syntax highlighting for Emacs Lisp.
+
+syntax forth "\.fs$"
+
+# Comments
+color cyan "[#].*"
+
+ set scopes ")"

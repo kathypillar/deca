@@ -1,0 +1,20 @@
+## This is meant for highlighting key combos in a nano help text.
+
+# It should not apply to any normal file, so no fileregex.
+syntax decahelp
+
+
+# Key combos:
+color cyan "[◂▸▴▾]"
+color cyan "\b((Sh-)?Tab|Enter|Ins|(Sh-\^?)?Del|Space|Bsp|Up|Down|Left|Right|Home|End|PgUp|PgDn)\b"
+color red "\^[^ ]+"
+color orange "\b(M|S[Hh]-[Mm])-[^ ]+"
+color cyan "\bF([0-9]+)"
+# Colorize M-) and M-" only when between parentheses...
+color normal " \(|\) "
+# ...or when at start of line.
+color cyan "^M-(\)|")"
+
+# Quoted indicators:
+color brightred "'(\^)'"
+color orange "'(M-)'"

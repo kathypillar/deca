@@ -1,0 +1,80 @@
+			     _    ___
+			  __| |  / _ \
+			 / _| | |  __/ 
+			 \__|_|  \___|
+			   ___   __ _
+			  / __| /  | |
+			 | |__  |()| |
+			  \___| \_/|_|
+
+			     \___/
+			     /. .\/
+			    /\___/
+			      | |
+
+          deca -- a more featured editor, based on nano
+
+Purpose:
+
+	deca 0.3 is a fork of GNU nano 7.2 that intends to add features
+while keeping the spirit and keybinds mostly the same. Some added 
+features so far are: PCRE regexes, bracket highlighting, buffer tabs, and more
+coming.
+
+Appearance:
+
+    In rough ASCII graphics, this is what deca's screen looks like:
+
+   ____________________________________________________________________
+  |  |filename||othername||anothername|                                |
+   --------------------------------------------------------------------
+  | This is the text window, displaying the contents of a 'buffer',    |
+  | the contents of the file you are editing.                          |
+  |                                                                    |
+  | The top row of the screen is the 'title bar'; it shows deca's      |
+  | version, the name of the file, and whether you modified it.        |
+  | The two bottom rows display the most important shortcuts; in       |
+  | those lines ^ means Ctrl.  The third row from the bottom shows     |
+  | some feedback message, or gets replaced with a prompt bar when     |
+  | you tell nano to do something that requires extra input.           |
+  |                                                                    |
+   --------------------------------------------------------------------
+  |  deca 0.3           [ Some status message ]            [xx,xx]  xx%|
+   --------------------------------------------------------------------
+  |^G Help       ^O Write Out  ^F Where Is   ^K Cut        ^T Execute  |
+  |^X Exit       ^R Read File  ^\ Replace    ^U Paste      ^J Justify  |
+   --------------------------------------------------------------------
+
+Origin:
+
+	I started this project in 2024 because I loved nano's ease-of-use
+and general layout and design, but felt it was missing a couple
+features that I think are useful.
+
+	As for the name, this project originally started out as "tin",
+an acronym standing for "tin is nano"(an homage to nano's original name
+"tip"). Unfortunatley this name was taken by an Usenet newreader so the
+name was changed to deca, a pun off of nano and pico.
+
+License:
+
+	Idk much about licenses ngl, but this is literally a derivative work.
+
+How to compile and install deca:
+
+    Download the latest deca source, extract it, and then:
+        cd deca-x.y
+        ./configure
+        make
+        make install
+
+	You will need both ncurses and PCRE installed inorder for deca to work.
+
+Web Page:
+	www.kathypillar.dev/deca
+
+ \___/
+_/. .\_
+ \___/ 
+  | |
+(decagoblin)

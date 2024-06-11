@@ -1,0 +1,30 @@
+## Syntax for a personal cookbook format.
+
+syntax markdown "\.cookbook$"
+
+# Title
+color blue "~+"
+
+# recipe
+color magenta "[^|]*:"
+
+#importants
+color yellow start=">" end="<"
+
+#spice level
+color red "[Ss]pice([ _][Ll]evel)?:"
+
+
+color green "(?<![^| ])( *([)]|([|] [|])|([/] ?[/]))){1}"
+color yellow "([^)|]*([)]|([|] [|])|([/] ?[/]))){2}"
+color orange "([^)|]*([)]|([|] [|])|([/] ?[/]))){3}"
+color red "([^)|]*([)]|([|] [|])|([/] ?[/]))){4}"
+color brightred "([^)|]*([)]|([|] [|])|([/] ?[/]))){5}"
+
+#color green start="^( |\t)*[)](?![^)]*[)])" end="[/][/](?![/][/])"
+#color yellow start="^([^)]*[)]){2}(?![^)]*[)])" end="^([^/]*[/][/]){2}(?![/][/])"
+#color orange start="^([^)]*[)]){3}(?![^)]*[)])" end="^([^/]*[/][/]){3}(?![/][/])"
+#color red start="^([^)]*[)]){4}(?![^)]*[)])" end="^([^/]*[/][/]){4}(?![/][/])"
+#color brightred start="^([^)]*[)]){5}(?![^)]*[)])" end="^([^/]*[/][/]){5}(?![/][/])"
+#color green "[)]|([|/] ?[|/])"
+#color yellow "([)]|([|/] ?[|/])){2}"

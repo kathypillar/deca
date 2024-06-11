@@ -1,0 +1,27 @@
+## Syntax highlighting for Javascript.
+
+syntax javascript "\.m?js$"
+magic "JavaScript source"
+comment "//"
+
+# Declarational stuff.
+color green "\b(async|class|const|extends|function|let|this|typeof|var|void)\b"
+# Flow control and special keywords.
+color brightyellow "\b(do|while|if|else|switch|case|default|for|each|in|of|with)\b"
+color brightyellow "\b(await|export|import|throw|try|catch|finally|new|delete)\b"
+# "Exit" points.
+color magenta "\b(break|continue|return|yield)\b"
+
+# Octal/decimal and hexadecimal numbers.
+color cyan "\b([0-9]+|0x[[:xdigit:]]+)\b"
+# Special values.
+color cyan "\b(true|false|null|undefined)\b"
+
+# Strings.
+color brightmagenta ""([^"\]|\\.)*"|'([^'\]|\\.)*'|`([^`\]|\\.)*`"
+# Comments.
+color brightblue "(^|[[:blank:]])//.*"
+color brightblue start="/\*" end="\*/"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
