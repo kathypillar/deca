@@ -17,5 +17,7 @@
 - fix all the ./config stuff to work: done!
 - expand decarc files:
 	- use set in decarc files: done
+	- fix the decarc files to work with pcre2: started
+	- add a constistent color scheme throughout all languages: in progress
 	- maybe add some sort of scripting language?? idk
 - add auto-indenting for scopes: done

@@ -56,20 +56,14 @@ an acronym standing for "tin is nano"(an homage to nano's original name
 "tip"). Unfortunatley this name was taken by an Usenet newreader so the
 name was changed to deca, a pun off of nano and pico.
 
-License:
-
-	Idk much about licenses ngl, but this is literally a derivative work.
-
 How to compile and install deca:
-
-    Download the latest deca source, extract it, and then:
-        cd deca-x.y
+	Clone the git repo
+        cd deca
 	./autogen.sh
         ./configure
-        make
         make install
 
-	You will need both ncurses and PCRE installed inorder for deca to work.
+	You will need both ncurses and PCRE2 installed in order for deca to work.
 
 Web Page:
 	www.kathypillar.dev/deca
