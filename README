@@ -16,7 +16,7 @@
 
 Purpose:
 
-	deca 0.3 is a fork of GNU nano 7.2 that intends to add features
+	deca 0.4 is a fork of GNU nano 7.2 that intends to add features
 while keeping the spirit and keybinds mostly the same. Some added 
 features so far are: PCRE regexes, bracket highlighting, buffer tabs, and more
 coming.
@@ -39,7 +39,7 @@ Appearance:
   | you tell nano to do something that requires extra input.           |
   |                                                                    |
    --------------------------------------------------------------------
-  |  deca 0.3           [ Some status message ]            [xx,xx]  xx%|
+  |  deca 0.4           [ Some status message ]            [xx,xx]  xx%|
    --------------------------------------------------------------------
   |^G Help       ^O Write Out  ^F Where Is   ^K Cut        ^T Execute  |
   |^X Exit       ^R Read File  ^\ Replace    ^U Paste      ^J Justify  |
