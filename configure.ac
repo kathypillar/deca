@@ -39,7 +39,7 @@ AM_CONDITIONAL(USE_NLS, test x$USE_NLS = xyes)
 dnl Data location.
 
 pkgdatadir=${datadir}/${PACKAGE}
-AC_DEFINE_DIR([PKGDATADIR], [pkgdatadir], [Where data are placed to.])
+AC_DEFINE_DIR([PKGDATADIR], [pkgdatadir], [Where data is placed.])
 
 dnl Whether this is a git repository.
 

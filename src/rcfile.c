@@ -1677,4 +1677,3 @@ void do_rcfiles(void)
 	free(decarc);
 	decarc = NULL;
 }
-

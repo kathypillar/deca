@@ -3476,6 +3476,7 @@ void spotlight_softwrapped(size_t from_col, size_t to_col)
 #endif
 
 #ifdef ENABLE_EXTRA
+
 #define CREDIT_LEN  66
 #define XLCREDIT_LEN  24
 

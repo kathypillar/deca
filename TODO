@@ -1,6 +1,6 @@
 - stop it from crashing when trying to open directories: donezo
 - options menu: 
-	- migrate configs and rcs to ~:
+	- migrate configs and rcs to ~: already done???????
 - add insertion mode:	
 	- make replace mode work with undo!:
 - multibuffer tab display: DONE!!!!!!
@@ -8,7 +8,7 @@
 	- add the current number of lines and words to it:
 	- make messages not overwrite the entire bar: DONE! EASILY!
 - general style improvments:
-	- make UI colors user configurable: accidentally done, this already existed to a sense in the orignal
+	- make UI colors user configurable:
 - rearrange the help bar, adding more useful key binds and etc:
 - publish this: DONE!
 - improve linter and spell check functionallity:
